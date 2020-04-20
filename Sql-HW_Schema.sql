@@ -7,12 +7,12 @@ DROP TABLE IF EXISTS salaries;
 
 
 create table employees(
-	emp_no 		INT			not null,
-	birth_date  DATE		not null,
-	first_name  VARCHAR		not null,
-	last_name 	VARCHAR		not null,
-	gender 		VARCHAR		not null,
-	hire_date 	DATE		not null,
+	emp_no      INT       not null,
+	birth_date  DATE      not null,
+	first_name  VARCHAR   not null,
+	last_name   VARCHAR   not null,
+	gender      VARCHAR   not null,
+	hire_date   DATE      not null,
 	primary key (emp_no)
 );
 
@@ -43,9 +43,9 @@ create table dept_emp(
 );
 
 create table titles(
-	emp_no		INT		not null,
+	emp_no      INT     not null,
 	title		VARCHAR not null,
-	from_date	DATE	not null,
+	from_date	DATE    not null,
 	to_date		DATE,
 	PRIMARY KEY (emp_no,title,from_date),
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no)
