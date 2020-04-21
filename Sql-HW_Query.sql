@@ -19,7 +19,7 @@ SELECT	emp_no, last_name, first_name, hire_date
 ---    last name, first name, and start and end employment dates.
 
 SELECT	dept_manager.dept_no, d.dept_name, dept_manager.emp_no, 
-		e.last_name, e.first_name, dept_manager.from_date, dept_manager.to_date
+        e.last_name, e.first_name, dept_manager.from_date, dept_manager.to_date
   FROM	dept_manager
   JOIN	departments as d ON dept_manager.dept_no = d.dept_no
   JOIN	employees AS e ON dept_manager.emp_no = e.emp_no;
@@ -53,26 +53,25 @@ SELECT	e.emp_no, e.last_name, e.first_name, d.dept_name
  
 --- 7. List all employees in the Sales and Development departments, 
 ---    including their employee number, last name, first name, and department name.
-
-SELECT	e.emp_no, e.last_name, e.first_name, d.dept_name 
-  FROM	employees as e
-  JOIN	dept_emp on dept_emp.emp_no = e.emp_no
-  JOIN	departments as d on dept_emp.dept_no = d.dept_no
- WHERE	d.dept_name in ('Sales' , 'Development');
+SELECT  e.emp_no, e.last_name, e.first_name, d.dept_name 
+  FROM  employees as e
+  JOIN  dept_emp on dept_emp.emp_no = e.emp_no
+  JOIN  departments as d on dept_emp.dept_no = d.dept_no
+ WHERE  d.dept_name in ('Sales' , 'Development');
  
 
 --- 8. In descending order, list the frequency count of employee last names, 
 ---    i.e., how many employees share each last name.
 
-  SELECT	last_name, COUNT(last_name)
-    FROM	employees
-GROUP BY	last_name
-ORDER BY	COUNT(last_name) desc;
+  SELECT  last_name, COUNT(last_name)
+    FROM  employees
+GROUP BY  last_name
+ORDER BY  COUNT(last_name) desc;
 
 
 --- ## Epilogue
 
-SELECT	* 
-  FROM	employees
- WHERE	emp_no = 499942;
+SELECT  * 
+  FROM  employees
+ WHERE  emp_no = 499942;
 
